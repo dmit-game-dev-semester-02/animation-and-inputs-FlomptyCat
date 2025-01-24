@@ -2,14 +2,14 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace assignmnet01_jarett;
-
-public class Game1 : Game
+namespace Assignment01_Jarett;
+ 
+public class Assignment01_Game : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    public Game1()
+    public Assignment01_Game()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
