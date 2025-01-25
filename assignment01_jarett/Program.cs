@@ -1,2 +1,2 @@
-﻿using var game = new Assignment01_Jarett.Game1();
+﻿using var game = new Assignment01_Jarett.Assignment01_Game();
 game.Run();
