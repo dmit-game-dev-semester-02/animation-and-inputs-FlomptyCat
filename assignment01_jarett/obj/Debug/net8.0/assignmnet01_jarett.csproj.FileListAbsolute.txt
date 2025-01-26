@@ -28,3 +28,6 @@ C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\obj\Debug\net8.0\r
 C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\grass-block.xnb
 C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\forest background.xnb
 C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\forest-background.xnb
+C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\character and animations.xnb
+C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\clearBackgroundStickman.xnb
+C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\fish-spin.xnb
