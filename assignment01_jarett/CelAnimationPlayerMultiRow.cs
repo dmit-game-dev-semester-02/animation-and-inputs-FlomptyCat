@@ -77,5 +77,7 @@ public class CelAnimationPlayerMultiRow
             spriteBatch.Draw(celAnimationSequence.Texture, position, celSourceRectangle, Color.White, 0.0f, Vector2.Zero, 1.0f, spriteEffects, 0.0f);
         }
     }
+
+    
 }
 

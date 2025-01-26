@@ -74,4 +74,9 @@ public class CelAnimationSequence
     {
         get { return celHeight; }
     }
+
+    public static implicit operator CelAnimationSequence(CelAnimationSequenceMultiRow v)
+    {
+        throw new NotImplementedException();
+    }
 }

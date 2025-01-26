@@ -70,5 +70,10 @@ public class CelAnimationPlayer
             spriteBatch.Draw(celAnimationSequence.Texture, position, celSourceRectangle, Color.White, 0.0f, Vector2.Zero, 1.0f, spriteEffects, 0.0f);
         }
     }
+
+    public static implicit operator CelAnimationPlayer(CelAnimationPlayerMultiRow v)
+    {
+        throw new NotImplementedException();
+    }
 }
 
