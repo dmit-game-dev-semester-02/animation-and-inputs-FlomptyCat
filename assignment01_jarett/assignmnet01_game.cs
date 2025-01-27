@@ -131,7 +131,7 @@ public class Assignment01_Game : Game
         _playerPosition += _playerVelocity * deltaTime;
 
         // Simulate ground collision
-        float groundY = _WindowHeight - 100; // Ground level
+        float groundY = _WindowHeight - 140; // Ground level
         if (_playerPosition.Y >= groundY)
         {
             _playerPosition.Y = groundY;
@@ -153,7 +153,7 @@ public class Assignment01_Game : Game
         {
             if (state.IsKeyDown(Keys.F))
     {
-        if (!_isFishSpinning) // If the animation is not already playing
+        
         {
             _isFishSpinning = true;
             _animationFish.Play(_fishSpinning); // Start the animation
