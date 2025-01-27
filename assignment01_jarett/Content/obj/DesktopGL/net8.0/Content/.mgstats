@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/ch-anim-bg.png","C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/bin/DesktopGL/Content/ch-anim-bg.xnb","TextureProcessor","Texture2DContent",211004,998605,0.2174661
 "C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/character and animations.jpg","C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/bin/DesktopGL/Content/character and animations.xnb","TextureProcessor","Texture2DContent",54126,1179733,0.1215714
 "C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/clearBackgroundStickman.png","C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/bin/DesktopGL/Content/clearBackgroundStickman.xnb","TextureProcessor","Texture2DContent",27336,202045,0.0128948
 "C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/fish-spin.png","C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/bin/DesktopGL/Content/fish-spin.xnb","TextureProcessor","Texture2DContent",12373,2227285,0.1463889

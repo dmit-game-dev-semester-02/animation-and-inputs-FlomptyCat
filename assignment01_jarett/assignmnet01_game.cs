@@ -14,7 +14,6 @@ public class Assignment01_Game : Game
 
     private Texture2D _ground;
     private Texture2D _playerSpriteSheet;
-    private CelAnimationPlayer _playerAnimator;
 
     private Rectangle _currentSourceRectangle; // Manages the source rectangle for rendering
     private int _celWidth = 37;
@@ -26,8 +25,18 @@ public class Assignment01_Game : Game
     private int _celIndex = 0; // Current frame index
     private int _currentRow = 0; // Current animation row
     private int _celColumnCount = 6; // Number of frames per row (columns)
-    private int _celRowCount = 3; // Number of rows in the sprite sheet
 
+
+    KeyboardState keyboardState = Keyboard.GetState();
+
+    private Vector2 _playerPosition;
+    private Vector2 _playerVelocity;
+    private float _gravity = 500f;       // Pixels per second²
+    private float _jumpForce = -300f;    // Initial velocity when jumping
+    private bool _isJumping = false;     // Track if the character is jumping
+    private bool _isOnGround = false;    // Check if the character is grounded
+    private bool _facingRight = true;
+    
     public Assignment01_Game()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -40,6 +49,8 @@ public class Assignment01_Game : Game
         _graphics.PreferredBackBufferWidth = _WindowWidth;
         _graphics.PreferredBackBufferHeight = _WindowHeight;
         _graphics.ApplyChanges();
+        _playerPosition = new Vector2(300, _WindowHeight - 100); // Initial position
+        base.Initialize();
         base.Initialize();
     }
 
@@ -59,29 +70,63 @@ public class Assignment01_Game : Game
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
-
+        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
         KeyboardState state = Keyboard.GetState();
 
         // Determine which animation row to use based on input
-        if (state.IsKeyDown(Keys.Right)) // Running animation (row 2)
+        if (state.IsKeyDown(Keys.LeftShift)) // Punching animation (row 2)
         {
             _currentRow = 2;
-            
+
         }
-        else if (state.IsKeyDown(Keys.Up)) // Walking animation (row 1)
+        else if (state.IsKeyDown(Keys.D)) // Walking Right (row 1)
         {
             _currentRow = 1;
-            
+            _playerVelocity.X = 200f;  // Move right
+        }
+        else if (state.IsKeyDown(Keys.A))  // Walking Right (row 1)
+        {
+            _currentRow = 1;
+            _playerVelocity.X = -200f;  // Move right
         }
         else // Idle animation (row 0)
         {
             _currentRow = 0;
+            _playerVelocity.X = 0f;
             
         }
-        
+        if (_isOnGround && state.IsKeyDown(Keys.Space))
+        {
+            _isJumping = true;
+            _isOnGround = false;
+            _playerVelocity.Y = _jumpForce; // Apply jump force
+        }
+        if (_playerVelocity.X > 0) // Moving right
+        {
+            _facingRight = true;
+        }
+        else if (_playerVelocity.X < 0) // Moving left
+        {
+            _facingRight = false;
+        }
         // Update animation timing
         _celTimeElapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
+        // Apply gravity
+        if (!_isOnGround)
+            _playerVelocity.Y += _gravity * deltaTime;
 
+        // Update player position
+        _playerPosition += _playerVelocity * deltaTime;
+
+        // Simulate ground collision
+        float groundY = _WindowHeight - 100; // Ground level
+        if (_playerPosition.Y >= groundY)
+        {
+            _playerPosition.Y = groundY;
+            _isOnGround = true;
+            _isJumping = false;
+            _playerVelocity.Y = 0;
+        }
         if (_celTimeElapsed >= _celTime)
         {
             _celTimeElapsed -= _celTime;
@@ -93,6 +138,7 @@ public class Assignment01_Game : Game
             _currentSourceRectangle.X = _celIndex * _celWidth;
             _currentSourceRectangle.Y = _currentRow * _celHeight;
         }
+        
 
         base.Update(gameTime);
     }
@@ -127,8 +173,18 @@ public class Assignment01_Game : Game
         }
 
         // Draw the player animation
-        Vector2 playerPosition = new Vector2(200, GraphicsDevice.Viewport.Height - groundHeight - _celHeight);
-        _spriteBatch.Draw(_playerSpriteSheet, playerPosition, _currentSourceRectangle, Color.White);
+        _spriteBatch.Draw(
+     _playerSpriteSheet,
+     _playerPosition,
+     _currentSourceRectangle,
+     Color.White,
+     0f,
+     Vector2.Zero,
+     1f,
+     _facingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally,
+     0f
+ );
+
 
         _spriteBatch.End();
 

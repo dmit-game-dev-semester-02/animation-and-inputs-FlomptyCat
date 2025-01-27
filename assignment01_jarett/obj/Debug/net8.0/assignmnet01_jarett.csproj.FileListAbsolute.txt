@@ -31,3 +31,4 @@ C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\C
 C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\character and animations.xnb
 C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\clearBackgroundStickman.xnb
 C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\fish-spin.xnb
+C:\Github\animation-and-inputs-FlomptyCat\assignment01_jarett\bin\Debug\net8.0\Content\ch-anim-bg.xnb

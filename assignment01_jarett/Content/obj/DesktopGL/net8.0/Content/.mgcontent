@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/ch-anim-bg.png</File>
     <File>C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/character and animations.jpg</File>
     <File>C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/clearBackgroundStickman.png</File>
     <File>C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/fish-spin.png</File>
@@ -13,6 +14,7 @@
     <File>C:/Github/animation-and-inputs-FlomptyCat/assignment01_jarett/Content/grass-block.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
