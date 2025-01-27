@@ -36,6 +36,11 @@ public class Assignment01_Game : Game
     private bool _isJumping = false;     // Track if the character is jumping
     private bool _isOnGround = false;    // Check if the character is grounded
     private bool _facingRight = true;
+
+    //fish spin
+    private CelAnimationSequence _fishSpinning;
+    private CelAnimationPlayer _animationFish;
+
     
     public Assignment01_Game()
     {
@@ -64,6 +69,13 @@ public class Assignment01_Game : Game
 
         // Initialize the first frame of the idle animation (row 0)
         _currentSourceRectangle = new Rectangle(0, 0, _celWidth, _celHeight);
+
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
+        Texture2D spriteSheet = Content.Load<Texture2D>("fish-spin");
+        _fishSpinning = new CelAnimationSequence(spriteSheet, 258, 1 / 9f);
+        _animationFish = new CelAnimationPlayer();
+        //start animating!
+        _animationFish.Play(_fishSpinning);
     }
 
     protected override void Update(GameTime gameTime)
@@ -138,7 +150,11 @@ public class Assignment01_Game : Game
             _currentSourceRectangle.X = _celIndex * _celWidth;
             _currentSourceRectangle.Y = _currentRow * _celHeight;
         }
-        
+        {
+        _animationFish.Update(gameTime);
+
+        base.Update(gameTime);
+    }
 
         base.Update(gameTime);
     }
@@ -185,7 +201,7 @@ public class Assignment01_Game : Game
      0f
  );
 
-
+        _animationFish.Draw(_spriteBatch, Vector2.Zero, SpriteEffects.None);
         _spriteBatch.End();
 
         base.Draw(gameTime);
