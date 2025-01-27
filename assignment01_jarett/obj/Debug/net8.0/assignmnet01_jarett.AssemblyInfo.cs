@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("assignmnet01_jarett")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+451cf0737c566bc6ee1f1616a94587c0a5cb420d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de0b7642ec10cecb9c3d16dd0858dbb04f40b571")]
 [assembly: System.Reflection.AssemblyProductAttribute("assignmnet01_jarett")]
 [assembly: System.Reflection.AssemblyTitleAttribute("assignmnet01_jarett")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

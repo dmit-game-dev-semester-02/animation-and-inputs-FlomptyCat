@@ -40,8 +40,8 @@ public class Assignment01_Game : Game
     //fish spin
     private CelAnimationSequence _fishSpinning;
     private CelAnimationPlayer _animationFish;
+    private bool _isFishSpinning = false;
 
-    
     public Assignment01_Game()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -105,7 +105,7 @@ public class Assignment01_Game : Game
         {
             _currentRow = 0;
             _playerVelocity.X = 0f;
-            
+
         }
         if (_isOnGround && state.IsKeyDown(Keys.Space))
         {
@@ -151,10 +151,24 @@ public class Assignment01_Game : Game
             _currentSourceRectangle.Y = _currentRow * _celHeight;
         }
         {
-        _animationFish.Update(gameTime);
-
-        base.Update(gameTime);
+            if (state.IsKeyDown(Keys.F))
+    {
+        if (!_isFishSpinning) // If the animation is not already playing
+        {
+            _isFishSpinning = true;
+            _animationFish.Play(_fishSpinning); // Start the animation
+        }
     }
+            if (_isFishSpinning)
+    {
+        _animationFish.Update(gameTime);
+    }
+    else{
+        
+    }
+
+            base.Update(gameTime);
+        }
 
         base.Update(gameTime);
     }
